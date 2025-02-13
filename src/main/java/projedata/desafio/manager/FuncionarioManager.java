@@ -66,12 +66,6 @@ public class FuncionarioManager {
     public ResponseEntity todosFuncionarios(String agrupar, List<Integer> meses, String filtro, String ordem) {
         var listaFuncionarios = repositorio.getAllActive();
 
-        if (meses != null && !meses.isEmpty()) {
-            listaFuncionarios = listaFuncionarios.stream()
-                    .filter(f -> meses.contains(f.getDataNascimento().getMonthValue()))
-                    .toList();
-        }
-
         if ("maiorIdade".equalsIgnoreCase(filtro)) {
             Optional<Funcionario> maiorIdade = listaFuncionarios.stream()
                     .max(Comparator.comparingInt(Funcionario::calcularIdade));
@@ -83,8 +77,15 @@ public class FuncionarioManager {
             }
         }
 
-        if ("alfabetica".equalsIgnoreCase(ordem)) {
+        if (meses != null && !meses.isEmpty()) {
+            listaFuncionarios = listaFuncionarios.stream()
+                    .filter(f -> meses.contains(f.getDataNascimento().getMonthValue()))
+                    .toList();
+        }
 
+
+        if ("alfabetica".equalsIgnoreCase(ordem)) {
+            listaFuncionarios.sort(Comparator.comparing(Funcionario::getNome));
         }
 
         if ("funcao".equalsIgnoreCase(agrupar)) {
@@ -106,5 +107,19 @@ public class FuncionarioManager {
         repositorio.saveAll(listaFuncionarios);
 
         return ResponseEntity.ok("Salarios reajustados em %s%% !".formatted(porcentagem));
+    }
+
+    public ResponseEntity totalSalarios() {
+        BigDecimal total = repositorio.totalSalarios();
+        return ResponseEntity.ok(total);
+    }
+
+    public ResponseEntity salariosMinimos(BigDecimal valorSalarioMinimo) {
+        var listaFuncionarios = repositorio.getAllActive();
+
+        List<FuncionarioSalariosMinimosDTO> listaFuncionariosSalariosMinimos = new ArrayList<>();
+
+        listaFuncionarios.forEach(f -> listaFuncionariosSalariosMinimos.add(new FuncionarioSalariosMinimosDTO(f, valorSalarioMinimo)));
+        return ResponseEntity.ok(listaFuncionariosSalariosMinimos);
     }
 }

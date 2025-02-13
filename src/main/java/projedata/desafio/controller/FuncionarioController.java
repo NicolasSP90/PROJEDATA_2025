@@ -26,10 +26,6 @@ public class FuncionarioController {
         return ResponseEntity.ok().build();
     }
 
-    // GET - Visualizar Um Funcionario (ID / Nome)
-    // POST - Criar um Funcionario
-    // PUT - Atualizar um Funcionário
-
     // Desativar por ID
     @DeleteMapping("/deactivate/id/{id}")
     @Transactional
@@ -75,5 +71,16 @@ public class FuncionarioController {
         return gerenciador.reajusteSalarios(porcentagem);
     }
 
+    // Total Salários
+    @GetMapping("/totalsalarios")
+    public ResponseEntity totalSalarios() {
+        return gerenciador.totalSalarios();
+    }
+
+    // Salários Mínimos
+    @GetMapping("/salariosminimos/{valorSalarioMinimo}")
+    public ResponseEntity salariosMinimos(@PathVariable BigDecimal valorSalarioMinimo) {
+        return gerenciador.salariosMinimos(valorSalarioMinimo);
+    }
 
 }

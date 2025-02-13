@@ -24,4 +24,18 @@ public class Pessoa {
     @Column(name = "data_nascimento")
     protected LocalDate dataNascimento;
 
+    public Integer calcularIdade() {
+        var hoje = LocalDate.now();
+
+        var idade = hoje.getYear() - dataNascimento.getYear();
+
+        if (hoje.getMonthValue() < this.dataNascimento.getMonthValue()) { idade -= 1; }
+
+        if (hoje.getMonthValue() == this.dataNascimento.getMonthValue()) {
+            if (hoje.getDayOfMonth() < this.dataNascimento.getDayOfMonth()) { idade -= 1; }
+        }
+
+        return idade;
+    }
+
 }

@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 @Entity
@@ -52,17 +53,7 @@ public class Funcionario extends Pessoa {
         this.salario = this.salario.multiply(multiplicador);
     }
 
-    public Integer calcularIdade() {
-        var hoje = LocalDate.now();
-
-        var idade = hoje.getYear() - dataNascimento.getYear();
-
-        if (hoje.getMonthValue() < this.dataNascimento.getMonthValue()) { idade -= 1; }
-
-        if (hoje.getMonthValue() == this.dataNascimento.getMonthValue()) {
-            if (hoje.getDayOfMonth() < this.dataNascimento.getDayOfMonth()) { idade -= 1; }
-        }
-
-        return idade;
+    public BigDecimal salariosMinimos(BigDecimal valorSalarioMinimo) {
+        return this.salario.divide(valorSalarioMinimo, 2, RoundingMode.HALF_UP);
     }
 }

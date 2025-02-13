@@ -183,6 +183,49 @@ Endpoint
 localhost:8080/funcionarios/all?meses=10,12
 ```
 
+#### Maior Idade
+
+Retorna o funcionário com maior idade com o método de cálculo especificado na classe *Pessoa*
+
+Endpoint
+```
+localhost:8080/funcionarios/all?filtro=maiorIdade
+```
+
+#### Ordem Alfabética
+
+Retorna a lista de funcionários em ordem alfabética.
+
+```
+localhost:8080/funcionarios/all?ordem=alfabetica
+```
+
+#### Total dos Salários
+
+Cálculo do valor total dos saários dos funcionários.
+
+```
+localhost:8080/funcionarios/totalsalarios
+```
+
+#### Quantidade de Saários Mínimos
+
+Cálculo da quantidade de salários mínimos. O valor do salário mínimo é informado como parâmetro da query.
+
+```
+localhost:8080/funcionarios/salariosminimos?valor=1212.00
+```
+
+
+### Execução do Endpoint ```/all```
+
+O endpoint ```localhost:8080/funcionarios/all``` possui a seguinte ordem de execução dos parâmetros opcionais:
+* filtro (maiorIdade) - é independente e retorna um valor sem considerar os demais parâmetros
+* meses - Filtra a lista de funcionarios pelos meses de nascimento especificados. Funciona em conjunto com outros parâmetros. 
+* ordem - Filtra a lista de funcionários de acordo com a ordem alfabética. Funciona em conjunto com outros parâmetros.
+* agrupar - Agrupa a lista por função. Funciona em conjunto com outros parâmetros.
+
+
 
 
 
