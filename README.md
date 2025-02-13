@@ -208,14 +208,13 @@ Cálculo do valor total dos saários dos funcionários.
 localhost:8080/funcionarios/totalsalarios
 ```
 
-#### Quantidade de Saários Mínimos
+#### Quantidade de Salários Mínimos
 
-Cálculo da quantidade de salários mínimos. O valor do salário mínimo é informado como parâmetro da query.
+Cálculo da quantidade de salários mínimos. O valor do salário mínimo é informado como path variable.
 
 ```
-localhost:8080/funcionarios/salariosminimos?valor=1212.00
+localhost:8080/funcionarios/salariosminimos/1212.00
 ```
-
 
 ### Execução do Endpoint ```/all```
 
@@ -226,6 +225,12 @@ O endpoint ```localhost:8080/funcionarios/all``` possui a seguinte ordem de exec
 * agrupar - Agrupa a lista por função. Funciona em conjunto com outros parâmetros.
 
 
+### Documentação Endpoints
 
+Os endpoints podem ser visualizados em ambiente local com swagger em
+* Requisições - http://localhost:8080/swagger-ui/index.html#/
+* Endpoints - http://localhost:8080/v3/api-docs
 
-
+Os JSON podem ser encontrados em:
+* [Swagger](swagger)
+* [Postman](postman)

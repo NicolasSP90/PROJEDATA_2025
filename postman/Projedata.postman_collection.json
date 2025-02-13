@@ -1,0 +1,854 @@
+{
+	"info": {
+		"_postman_id": "c34e490c-abdb-4bfc-8e6f-76b3843f9872",
+		"name": "Projedata",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32761453"
+	},
+	"item": [
+		{
+			"name": "3.1 - Inserir em Lote",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {   \r\n        \"nome\": \"Maria\", \r\n        \"data_nascimento\": \"18/10/2000\",\r\n        \"salario\": 2009.44, \r\n        \"funcao\": \"Operador\"\r\n    },\r\n    {\r\n        \"nome\": \"João\", \r\n        \"data_nascimento\": \"12/05/1990\", \r\n        \"salario\": 2284.38, \r\n        \"funcao\": \"Operador\"\r\n    },\r\n    {\r\n        \"nome\": \"Caio\", \r\n        \"data_nascimento\": \"02/05/1961\", \r\n        \"salario\": 9836.14, \r\n        \"funcao\": \"Coordenador\"\r\n    },\r\n    {\r\n        \"nome\": \"Miguel\", \r\n        \"data_nascimento\": \"14/10/1988\", \r\n        \"salario\": 19119.88, \r\n        \"funcao\": \"Diretor\"\r\n    },\r\n    {\r\n        \"nome\": \"Alice\", \r\n        \"data_nascimento\": \"05/01/1995\", \r\n        \"salario\": 2234.68, \r\n        \"funcao\": \"Recepcionista\"\r\n    },\r\n    {\r\n        \"nome\": \"Heitor\", \r\n        \"data_nascimento\": \"19/11/1999\", \r\n        \"salario\": 1582.72, \r\n        \"funcao\": \"Operador\"\r\n    },\r\n    {\r\n        \"nome\": \"Arthur\", \r\n        \"data_nascimento\": \"31/03/1993\", \r\n        \"salario\": 4071.84, \r\n        \"funcao\": \"Contador\"\r\n    },\r\n    {\r\n        \"nome\": \"Laura\", \r\n        \"data_nascimento\": \"08/07/1994\", \r\n        \"salario\": 3017.45, \r\n        \"funcao\": \"Gerente\"\r\n    },\r\n    {\r\n        \"nome\": \"Heloísa\", \r\n        \"data_nascimento\": \"24/05/2003\", \r\n        \"salario\": 1606.85, \r\n        \"funcao\": \"Eletricista\"\r\n    },\r\n    {\r\n        \"nome\": \"Helena\", \r\n        \"data_nascimento\": \"02/09/1996\", \r\n        \"salario\": 2799.93, \r\n        \"funcao\": \"Gerente\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/funcionatios/batch_import",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionatios",
+						"batch_import"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.2 Remover João (nome)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/funcionarios/deactivate/nome/João",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionarios",
+						"deactivate",
+						"nome",
+						"João"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.2 - Remover João (id)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/funcionarios/deactivate/id/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionarios",
+						"deactivate",
+						"id",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.2 - Ativar João (nome)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/funcionarios/activate/nome/João",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionarios",
+						"activate",
+						"nome",
+						"João"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.2 - Ativar João (id)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/funcionarios/activate/id/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionarios",
+						"activate",
+						"id",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.3 - Exibir Todos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/funcionarios/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionarios",
+						"all"
+					],
+					"query": [
+						{
+							"key": "meses",
+							"value": "10,12",
+							"disabled": true
+						},
+						{
+							"key": "agrupar",
+							"value": "funcao",
+							"disabled": true
+						},
+						{
+							"key": "filtro",
+							"value": "maiorIdade",
+							"disabled": true
+						},
+						{
+							"key": "ordem",
+							"value": "alfabetica",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "3.3 - Exibir Todos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/funcionarios/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios",
+								"all"
+							],
+							"query": [
+								{
+									"key": "meses",
+									"value": "10,12",
+									"disabled": true
+								},
+								{
+									"key": "agrupar",
+									"value": "funcao",
+									"disabled": true
+								},
+								{
+									"key": "filtro",
+									"value": "maiorIdade",
+									"disabled": true
+								},
+								{
+									"key": "ordem",
+									"value": "alfabetica",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 20:34:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Maria\",\n        \"dataNascimento\": \"18/10/2000\",\n        \"salario\": \"2.210,38\",\n        \"funcao\": \"Operador\"\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"João\",\n        \"dataNascimento\": \"12/05/1990\",\n        \"salario\": \"2.512,82\",\n        \"funcao\": \"Operador\"\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"Caio\",\n        \"dataNascimento\": \"02/05/1961\",\n        \"salario\": \"10.819,75\",\n        \"funcao\": \"Coordenador\"\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"Miguel\",\n        \"dataNascimento\": \"14/10/1988\",\n        \"salario\": \"21.031,87\",\n        \"funcao\": \"Diretor\"\n    },\n    {\n        \"id\": 5,\n        \"nome\": \"Alice\",\n        \"dataNascimento\": \"05/01/1995\",\n        \"salario\": \"2.458,15\",\n        \"funcao\": \"Recepcionista\"\n    },\n    {\n        \"id\": 6,\n        \"nome\": \"Heitor\",\n        \"dataNascimento\": \"19/11/1999\",\n        \"salario\": \"1.740,99\",\n        \"funcao\": \"Operador\"\n    },\n    {\n        \"id\": 7,\n        \"nome\": \"Arthur\",\n        \"dataNascimento\": \"31/03/1993\",\n        \"salario\": \"4.479,02\",\n        \"funcao\": \"Contador\"\n    },\n    {\n        \"id\": 8,\n        \"nome\": \"Laura\",\n        \"dataNascimento\": \"08/07/1994\",\n        \"salario\": \"3.319,20\",\n        \"funcao\": \"Gerente\"\n    },\n    {\n        \"id\": 9,\n        \"nome\": \"Heloísa\",\n        \"dataNascimento\": \"24/05/2003\",\n        \"salario\": \"1.767,54\",\n        \"funcao\": \"Eletricista\"\n    },\n    {\n        \"id\": 10,\n        \"nome\": \"Helena\",\n        \"dataNascimento\": \"02/09/1996\",\n        \"salario\": \"3.079,92\",\n        \"funcao\": \"Gerente\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "3.4 - Reajuste Salários",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/funcionarios/reajuste/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionarios",
+						"reajuste",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.5 e 3.6 - Agrupar por Função",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/funcionarios/all?agrupar=funcao",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionarios",
+						"all"
+					],
+					"query": [
+						{
+							"key": "meses",
+							"value": "10,12",
+							"disabled": true
+						},
+						{
+							"key": "agrupar",
+							"value": "funcao"
+						},
+						{
+							"key": "filtro",
+							"value": "maiorIdade",
+							"disabled": true
+						},
+						{
+							"key": "ordem",
+							"value": "alfabetica",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "3.5 e 3.6 - Agrupar por Função",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/funcionarios/all?agrupar=funcao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios",
+								"all"
+							],
+							"query": [
+								{
+									"key": "meses",
+									"value": "10,12",
+									"disabled": true
+								},
+								{
+									"key": "agrupar",
+									"value": "funcao"
+								},
+								{
+									"key": "filtro",
+									"value": "maiorIdade",
+									"disabled": true
+								},
+								{
+									"key": "ordem",
+									"value": "alfabetica",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 20:34:38 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Operador\": [\n        {\n            \"id\": 1,\n            \"nome\": \"Maria\",\n            \"dataNascimento\": \"18/10/2000\",\n            \"salario\": \"2.210,38\",\n            \"funcao\": \"Operador\"\n        },\n        {\n            \"id\": 2,\n            \"nome\": \"João\",\n            \"dataNascimento\": \"12/05/1990\",\n            \"salario\": \"2.512,82\",\n            \"funcao\": \"Operador\"\n        },\n        {\n            \"id\": 6,\n            \"nome\": \"Heitor\",\n            \"dataNascimento\": \"19/11/1999\",\n            \"salario\": \"1.740,99\",\n            \"funcao\": \"Operador\"\n        }\n    ],\n    \"Eletricista\": [\n        {\n            \"id\": 9,\n            \"nome\": \"Heloísa\",\n            \"dataNascimento\": \"24/05/2003\",\n            \"salario\": \"1.767,54\",\n            \"funcao\": \"Eletricista\"\n        }\n    ],\n    \"Recepcionista\": [\n        {\n            \"id\": 5,\n            \"nome\": \"Alice\",\n            \"dataNascimento\": \"05/01/1995\",\n            \"salario\": \"2.458,15\",\n            \"funcao\": \"Recepcionista\"\n        }\n    ],\n    \"Diretor\": [\n        {\n            \"id\": 4,\n            \"nome\": \"Miguel\",\n            \"dataNascimento\": \"14/10/1988\",\n            \"salario\": \"21.031,87\",\n            \"funcao\": \"Diretor\"\n        }\n    ],\n    \"Gerente\": [\n        {\n            \"id\": 8,\n            \"nome\": \"Laura\",\n            \"dataNascimento\": \"08/07/1994\",\n            \"salario\": \"3.319,20\",\n            \"funcao\": \"Gerente\"\n        },\n        {\n            \"id\": 10,\n            \"nome\": \"Helena\",\n            \"dataNascimento\": \"02/09/1996\",\n            \"salario\": \"3.079,92\",\n            \"funcao\": \"Gerente\"\n        }\n    ],\n    \"Coordenador\": [\n        {\n            \"id\": 3,\n            \"nome\": \"Caio\",\n            \"dataNascimento\": \"02/05/1961\",\n            \"salario\": \"10.819,75\",\n            \"funcao\": \"Coordenador\"\n        }\n    ],\n    \"Contador\": [\n        {\n            \"id\": 7,\n            \"nome\": \"Arthur\",\n            \"dataNascimento\": \"31/03/1993\",\n            \"salario\": \"4.479,02\",\n            \"funcao\": \"Contador\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "3.8 - Exibir Informando Mês Aniversário",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/funcionarios/all?meses=10,12",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionarios",
+						"all"
+					],
+					"query": [
+						{
+							"key": "meses",
+							"value": "10,12"
+						},
+						{
+							"key": "agrupar",
+							"value": "funcao",
+							"disabled": true
+						},
+						{
+							"key": "filtro",
+							"value": "maiorIdade",
+							"disabled": true
+						},
+						{
+							"key": "ordem",
+							"value": "alfabetica",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "3.8 - Exibir Informando Mês Aniversário",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/funcionarios/all?meses=10,12",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios",
+								"all"
+							],
+							"query": [
+								{
+									"key": "meses",
+									"value": "10,12"
+								},
+								{
+									"key": "agrupar",
+									"value": "funcao",
+									"disabled": true
+								},
+								{
+									"key": "filtro",
+									"value": "maiorIdade",
+									"disabled": true
+								},
+								{
+									"key": "ordem",
+									"value": "alfabetica",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 20:34:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Maria\",\n        \"dataNascimento\": \"18/10/2000\",\n        \"salario\": \"2.210,38\",\n        \"funcao\": \"Operador\"\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"Miguel\",\n        \"dataNascimento\": \"14/10/1988\",\n        \"salario\": \"21.031,87\",\n        \"funcao\": \"Diretor\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "3.9 - Maior Idade",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/funcionarios/all?filtro=maiorIdade",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionarios",
+						"all"
+					],
+					"query": [
+						{
+							"key": "meses",
+							"value": "10,12",
+							"disabled": true
+						},
+						{
+							"key": "agrupar",
+							"value": "funcao",
+							"disabled": true
+						},
+						{
+							"key": "filtro",
+							"value": "maiorIdade"
+						},
+						{
+							"key": "ordem",
+							"value": "alfabetica",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "3.9 - Maior Idade",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/funcionarios/all?filtro=maiorIdade",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios",
+								"all"
+							],
+							"query": [
+								{
+									"key": "meses",
+									"value": "10,12",
+									"disabled": true
+								},
+								{
+									"key": "agrupar",
+									"value": "funcao",
+									"disabled": true
+								},
+								{
+									"key": "filtro",
+									"value": "maiorIdade"
+								},
+								{
+									"key": "ordem",
+									"value": "alfabetica",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 20:34:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nome\": \"Caio\",\n    \"idade\": 63\n}"
+				}
+			]
+		},
+		{
+			"name": "3.10 - Ordem Alfabética",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/funcionarios/all?ordem=alfabetica",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionarios",
+						"all"
+					],
+					"query": [
+						{
+							"key": "meses",
+							"value": "10,12",
+							"disabled": true
+						},
+						{
+							"key": "agrupar",
+							"value": "funcao",
+							"disabled": true
+						},
+						{
+							"key": "filtro",
+							"value": "maiorIdade",
+							"disabled": true
+						},
+						{
+							"key": "ordem",
+							"value": "alfabetica"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "3.10 - Ordem Alfabética",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/funcionarios/all?ordem=alfabetica",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios",
+								"all"
+							],
+							"query": [
+								{
+									"key": "meses",
+									"value": "10,12",
+									"disabled": true
+								},
+								{
+									"key": "agrupar",
+									"value": "funcao",
+									"disabled": true
+								},
+								{
+									"key": "filtro",
+									"value": "maiorIdade",
+									"disabled": true
+								},
+								{
+									"key": "ordem",
+									"value": "alfabetica"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 20:34:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 5,\n        \"nome\": \"Alice\",\n        \"dataNascimento\": \"05/01/1995\",\n        \"salario\": \"2.458,15\",\n        \"funcao\": \"Recepcionista\"\n    },\n    {\n        \"id\": 7,\n        \"nome\": \"Arthur\",\n        \"dataNascimento\": \"31/03/1993\",\n        \"salario\": \"4.479,02\",\n        \"funcao\": \"Contador\"\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"Caio\",\n        \"dataNascimento\": \"02/05/1961\",\n        \"salario\": \"10.819,75\",\n        \"funcao\": \"Coordenador\"\n    },\n    {\n        \"id\": 6,\n        \"nome\": \"Heitor\",\n        \"dataNascimento\": \"19/11/1999\",\n        \"salario\": \"1.740,99\",\n        \"funcao\": \"Operador\"\n    },\n    {\n        \"id\": 10,\n        \"nome\": \"Helena\",\n        \"dataNascimento\": \"02/09/1996\",\n        \"salario\": \"3.079,92\",\n        \"funcao\": \"Gerente\"\n    },\n    {\n        \"id\": 9,\n        \"nome\": \"Heloísa\",\n        \"dataNascimento\": \"24/05/2003\",\n        \"salario\": \"1.767,54\",\n        \"funcao\": \"Eletricista\"\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"João\",\n        \"dataNascimento\": \"12/05/1990\",\n        \"salario\": \"2.512,82\",\n        \"funcao\": \"Operador\"\n    },\n    {\n        \"id\": 8,\n        \"nome\": \"Laura\",\n        \"dataNascimento\": \"08/07/1994\",\n        \"salario\": \"3.319,20\",\n        \"funcao\": \"Gerente\"\n    },\n    {\n        \"id\": 1,\n        \"nome\": \"Maria\",\n        \"dataNascimento\": \"18/10/2000\",\n        \"salario\": \"2.210,38\",\n        \"funcao\": \"Operador\"\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"Miguel\",\n        \"dataNascimento\": \"14/10/1988\",\n        \"salario\": \"21.031,87\",\n        \"funcao\": \"Diretor\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "3.11 - Total Salários",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/funcionarios/totalsalarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionarios",
+						"totalsalarios"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "3.11 - Total Salários",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/funcionarios/totalsalarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios",
+								"totalsalarios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 20:34:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "53419.64"
+				}
+			]
+		},
+		{
+			"name": "3.11 - Salários mínimos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/funcionarios/salariosminimos/1212.00",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionarios",
+						"salariosminimos",
+						"1212.00"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "3.11 - Salários mínimos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/funcionarios/salariosminimos/1212.00",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios",
+								"salariosminimos",
+								"1212.00"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Disposition",
+							"value": "inline;filename=f.txt"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Feb 2025 20:35:03 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"nome\": \"Maria\",\n        \"salariosMinimos\": 1.82\n    },\n    {\n        \"nome\": \"João\",\n        \"salariosMinimos\": 2.07\n    },\n    {\n        \"nome\": \"Caio\",\n        \"salariosMinimos\": 8.93\n    },\n    {\n        \"nome\": \"Miguel\",\n        \"salariosMinimos\": 17.35\n    },\n    {\n        \"nome\": \"Alice\",\n        \"salariosMinimos\": 2.03\n    },\n    {\n        \"nome\": \"Heitor\",\n        \"salariosMinimos\": 1.44\n    },\n    {\n        \"nome\": \"Arthur\",\n        \"salariosMinimos\": 3.7\n    },\n    {\n        \"nome\": \"Laura\",\n        \"salariosMinimos\": 2.74\n    },\n    {\n        \"nome\": \"Heloísa\",\n        \"salariosMinimos\": 1.46\n    },\n    {\n        \"nome\": \"Helena\",\n        \"salariosMinimos\": 2.54\n    }\n]"
+				}
+			]
+		}
+	]
+}
